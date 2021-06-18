@@ -1,23 +1,27 @@
-import { useState } from "react"
-
+import { useEffect, useState } from 'react'
 const Home = () => {
-    // const [notes, setNotes] = useState([
-    //     { title: "First note", id: 1, body: "Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut ninja wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit ninja lobortis nisl ut aliquip ex ea commodo consequat." },
-    //     { title: "Second note", id: 2, body: "" },
-    //     { title: "Third note", id: 3, body: "Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut ninja wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit ninja lobortis nisl ut aliquip ex ea commodo consequat." }
-
-    // ])
+    const [notes, setNotes] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+    useEffect(() => {
+        fetch('http://localhost:8000/notes')
+            .then((res) => res.json())
+            .then((data) => {
+                setIsLoading(false);
+                setNotes(data)
+            })
+    }, [])
     return (
         <div>
             <h2 className="title">All notes</h2>
-            {/* {notes && notes.map((note) => {
+            {isLoading && (<div> Loading... </div>)}
+            {notes && notes.map((note) => {
                 return (
                     <div className="note-preview" key={note.id}>
                         <h3>{note.title}</h3>
                         <p>{note.body}</p>
                     </div>
                 )
-            })} */}
+            })}
         </div>
     )
 }
