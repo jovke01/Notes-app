@@ -9,19 +9,17 @@ const Home = () => {
                 setIsLoading(false);
                 setNotes(data)
             })
+            .catch(err => console.log(err.message))
     }, [])
     return (
         <div>
             <h2 className="title">All notes</h2>
             {isLoading && (<div> Loading... </div>)}
-            {notes && notes.map((note) => {
-                return (
-                    <div className="note-preview" key={note.id}>
-                        <h3>{note.title}</h3>
-                        <p>{note.body}</p>
-                    </div>
-                )
-            })}
+            {notes && notes.map(note => (
+                <div className="note-preview" key={note.id} >
+                    <h3>{note.title}</h3>
+                    <p>{note.body}</p>
+                </div>))}
         </div>
     )
 }

@@ -3,6 +3,7 @@ import './index.css';
 import Navbar from "./Navbar";
 import Home from "./Home";
 import Create from "./Create";
+import Note from "./Note";
 function App() {
   return (
     <Router>
@@ -14,6 +15,9 @@ function App() {
           </Route>
           <Route path="/create">
             <Create />
+          </Route>
+          <Route path="/blogs/:id">
+            <Note />
           </Route>
         </Switch>
       </div>

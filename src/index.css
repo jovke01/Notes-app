@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+/* global */
 * {
 	margin: 0;
 	padding: 0;
@@ -17,7 +18,7 @@ a {
 	text-decoration: none;
 	color: black;
 }
-
+/* navbar */
 .navbar {
 	display: flex;
 	align-items: center;
@@ -33,10 +34,17 @@ a {
 	border: 2px solid var(--main-color);
 	padding: 10px;
 }
+/* note */
 .note-preview {
 	max-width: 70%;
 	margin: 20px auto;
 }
+.note-preview p {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+/* create */
 .create form {
 	display: flex;
 	flex-direction: column;
