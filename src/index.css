@@ -44,6 +44,9 @@ a {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+.note-details p {
+	margin-top: 20px;
+}
 /* create */
 .create form {
 	display: flex;
