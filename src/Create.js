@@ -21,7 +21,7 @@ const Create = () => {
                 <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Note title" />
                 <h3>Body</h3>
                 <textarea value={body} onChange={(e) => setBody(e.target.value)} placeholder="Note body" />
-                <button>Submit</button>
+                <button className="button">Submit</button>
             </form>
         </div>
     )

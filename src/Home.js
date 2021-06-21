@@ -7,15 +7,16 @@ const Home = () => {
         <div>
             <h2 className="title">All notes</h2>
             {isLoading && (<div> Loading... </div>)}
-            {notes && notes.map(note => (
+            {notes && (notes.map(note => (
                 <Link to={`/notes/${note.id}`} key={note.id}>
                     <div className="note-preview"  >
                         <h3>{note.title}</h3>
                         <p>{note.body}</p>
                     </div>
                 </Link>
-            ))
+            )))
             }
+
         </div >
     )
 }
