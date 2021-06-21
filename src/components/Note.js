@@ -1,10 +1,10 @@
-import useFetch from "../hooks/useFetch";
+import useFetchGet from "../hooks/useFetchGet";
 import { useParams } from "react-router"
 import { useHistory } from "react-router-dom";
 const Note = () => {
     const history = useHistory()
     const { id } = useParams();
-    const { data: note, isLoading } = useFetch('http://localhost:8000/notes/' + id)
+    const { data: note, isLoading } = useFetchGet('http://localhost:8000/notes/' + id)
     const handleDelete = () => {
         fetch('http://localhost:8000/notes/' + id, {
             method: 'DELETE'

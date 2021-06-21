@@ -1,8 +1,8 @@
-import useFetch from "../hooks/useFetch"
+import useFetchGet from "../hooks/useFetchGet"
 import { Link } from "react-router-dom"
 import emptyBox from '../assets/empty-box.png'
 const Home = () => {
-    const { data: notes, isLoading, isEmpty } = useFetch('http://localhost:8000/notes')
+    const { data: notes, isLoading, isEmpty } = useFetchGet('http://localhost:8000/notes')
     console.log(notes);
     return (
         <div>
