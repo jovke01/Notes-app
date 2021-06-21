@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: Quicksand, sans-serif;
 }
 :root {
 	--main-color: #318bc7;
@@ -12,7 +13,6 @@
 .App {
 	max-width: 50vw;
 	margin: 0 auto;
-	font-family: Quicksand, sans-serif;
 }
 a {
 	text-decoration: none;
@@ -29,12 +29,31 @@ a {
 	color: var(--main-color);
 }
 .navbar a p {
-	font-weight: 700;
 	font-size: 1.1rem;
+	font-weight: 700;
 	border: 2px solid var(--main-color);
 	padding: 10px;
 }
-/* note */
+/* Home */
+.no-notes {
+	max-width: fit-content;
+	margin: 50px auto;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.no-notes h2 {
+	margin-bottom: 15px;
+	opacity: 0.7;
+}
+.no-notes img {
+	width: 20%;
+	opacity: 0.7;
+}
+
+/* Note */
 .note-preview {
 	max-width: 70%;
 	margin: 20px auto;
@@ -47,7 +66,7 @@ a {
 .note-details p {
 	margin-top: 20px;
 }
-/* create */
+/* Create */
 .create form {
 	display: flex;
 	flex-direction: column;
@@ -64,18 +83,23 @@ a {
 	width: 200px;
 	padding-bottom: 5px;
 	font-size: 1.1rem;
+	font-weight: 600;
 }
 .create textarea {
 	margin-top: 10px;
 	height: 100px;
+	padding: 5px;
+	font-weight: 600;
 }
 .button {
-	width: fit-content;
 	margin-top: 20px;
+	width: fit-content;
 	padding: 10px;
 	border: 2px solid var(--main-color);
 	padding: 10px;
-	font-weight: 600;
-	color: var(--main-color);
 	cursor: pointer;
+	font-weight: 800;
+	background: none;
+	color: var(--main-color);
+	font-size: 1.1rem;
 }

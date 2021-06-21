@@ -1,4 +1,4 @@
-import useFetch from "./useFetch";
+import useFetch from "../hooks/useFetch";
 import { useParams } from "react-router"
 import { useHistory } from "react-router-dom";
 const Note = () => {
