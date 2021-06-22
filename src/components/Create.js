@@ -1,17 +1,21 @@
 import { useState } from "react"
 import { useHistory } from "react-router-dom"
+
 const Create = () => {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
     const history = useHistory()
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        fetch('http://localhost:8000/notes', {
+    const postNote = async () => {
+        await fetch('http://localhost:8000/notes', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title, body })
-        }).then(() => history.push("/"))
+        })
+        history.push("/")
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        postNote()
     }
     return (
         <div className="create">
