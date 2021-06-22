@@ -4,11 +4,16 @@ import { useHistory } from "react-router-dom";
 const Note = () => {
     const history = useHistory()
     const { id } = useParams();
-    const { data: note, isLoading } = useFetchGet('http://localhost:8000/notes/' + id)
-    const handleDelete = () => {
-        fetch('http://localhost:8000/notes/' + id, {
-            method: 'DELETE'
-        }).then(() => history.push('/'))
+    const { data: note, isLoading } = useFetchGet(`http://localhost:8000/notes/${id}`)
+    const handleDelete = async () => {
+        try {
+            await fetch(`http://localhost:8000/notes/${id}`, {
+                method: 'DELETE'
+            })
+            history.push('/')
+        } catch (err) {
+            console.error(JSON.stringify(err.message));
+        }
     }
     return (
         <div>

@@ -15,7 +15,6 @@ const useFetchGet = (url) => {
                 }
                 setData(data)
             } catch (err) {
-
                 console.error(err.message);
             }
         }

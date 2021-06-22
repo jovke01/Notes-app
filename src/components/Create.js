@@ -6,12 +6,17 @@ const Create = () => {
     const [body, setBody] = useState("")
     const history = useHistory()
     const postNote = async () => {
-        await fetch('http://localhost:8000/notes', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ title, body })
-        })
-        history.push("/")
+        try {
+            await fetch('http://localhost:8000/notes', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title, body })
+            })
+            history.push("/")
+
+        } catch (err) {
+            console.error(err.message);
+        }
     }
     const handleSubmit = (e) => {
         e.preventDefault();
