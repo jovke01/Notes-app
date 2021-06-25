@@ -9,6 +9,7 @@ const useFetchGet = (url) => {
             try {
                 const res = await fetch(url)
                 let data = await res.json()
+                console.log(res.ok);
                 setIsLoading(false);
                 if (data.length === 0) {
                     setIsEmpty(true)
